@@ -8,7 +8,7 @@ const baseRouter = Router({ caseSensitive: true });
 
 baseRouter
     .route("/")
-    .get((req, res) => res.status(200).send("Ping!"))
+    .get((req: Request, res: Response) => res.status(200).json({ message: "Hello World!" }))
     .post((req: Request, res: Response, next: NextFunction) => next(new NotAllowedError()))
     .patch((req: Request, res: Response, next: NextFunction) => next(new NotAllowedError()))
     .put((req: Request, res: Response, next: NextFunction) => next(new NotAllowedError()))
